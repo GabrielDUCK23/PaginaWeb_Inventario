@@ -134,22 +134,21 @@ public class Usuario extends HttpServlet {
                     }
                     u.setNivel(Nivel);
                     u.setPassword(request.getParameter("Pass"));
+                    
                     if (correo.endsWith("udg.mx")) {
                         boolean VerificarCodigo = dao.verificarCodigo(Codigo);
                         if (VerificarCodigo) {
                             respuesta = dao.Insertar(u);
                             request.setAttribute("respuesta", respuesta);
-                            rd = request.getRequestDispatcher("Registro_SuperUsuario.jsp");
                         } else {
-                            respuesta = "Codigo de usuario en uso,verifica que este correcto.";
+                            respuesta = "Código de usuario en uso, verifica que esté correcto.";
                             request.setAttribute("respuesta", respuesta);
-                            rd = request.getRequestDispatcher("Registro_SuperUsuario.jsp");
                         }
                     } else {
-                        respuesta = "El correo electrónico debe\n ser de la Universidad de Guadalajara (UDG)";
-                        request.setAttribute("respuesta", respuesta);
-                        rd = request.getRequestDispatcher("Registro_SuperUsuario.jsp");
+                        respuesta = "El correo electrónico debe ser de la Universidad de Guadalajara (UDG).";
+                            request.setAttribute("respuesta", respuesta);
                     }
+                    rd = request.getRequestDispatcher("Registro_SuperUsuario.jsp");
 
 //                  -------------------------------------- Actualiza Datos de usuarios ---------------------------------------------------------------------
 //                    Codigo para actualizar los datos de los usuarios desde el perfil de encargado de laboratorio

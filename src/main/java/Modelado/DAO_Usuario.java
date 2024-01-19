@@ -90,8 +90,13 @@ public class DAO_Usuario implements Operaciones {
             respuesta = "Usuario Creado";
             con.close();
 
-        } catch (ClassNotFoundException | SQLException e) {
-        }
+        } catch (ClassNotFoundException e) {
+        Logger.getLogger(DAO_Usuario.class.getName()).log(Level.SEVERE, "Error: Controlador de base de datos no encontrado", e);
+        respuesta = "Error: Controlador de base de datos no encontrado";
+    } catch (SQLException e) {
+        Logger.getLogger(DAO_Usuario.class.getName()).log(Level.SEVERE, "Error en la consulta SQL: " + e.getMessage(), e);
+        respuesta = "Error en la consulta SQL: " + e.getMessage();
+    }
         return respuesta;
     }
 

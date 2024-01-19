@@ -138,18 +138,21 @@
         <br><br>
         <br><br>        <br>
 
-<%                   String respuesta = (String) request.getAttribute("respuesta");
-            if (respuesta != null) {
-        %>
-        <script>
-            window.onload = function () {
-                alert("<%= respuesta%>");
-            };
-        </script>
-        <%
-            }
-        %>
+  
     <center>
+              <%
+    String respuesta = (String) request.getAttribute("respuesta");
+    if (respuesta != null) {
+%>
+<script>
+    window.onload = function() {
+        alert("<%= respuesta %>");
+    };
+</script>
+<%
+    }
+%>
+
         <section class="form-Alumnos" id="formulario" >
             <form name="Usuario" method="POST" action="Usuario">
                                             <img class="ImgLogo" src="imagenes/CUTNEW.png" alt="logo"></a><br>
@@ -211,11 +214,11 @@
                         <option value="LICF">LICF - Licenciatura en Ciencias Forenses</option>
                         <option value="SEMS">SEMS - Sistema de Educación Media Superior</option>
                     </select>
-                    <label for="Pefil">Seleccione el tipo de usuario:</label> <br><br>
+                    <label for="Pefil">Seleccione el perfil del usuario:</label> <br><br>
                     <select class="controls" type="select" name="Pertxt" id="Perfil" >
-                        <option>Encargado Laboratorio</option>
                         <option>Profesor/a</option>
-                        <option value="Estudiante">Alumnos e investigadores</option>
+                        <option>Encargado Laboratorio</option>
+                        <option value="Estudiante">Alumnos o investigadores</option>
 
                     </select>
                     <label for="Semestre">Seleccione el Semestre:</label> <br><br>
@@ -227,6 +230,13 @@
                         <option>4</option>
                         <option>5</option>
                         <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                        <option>11</option>
+                        <option>12</option>
+                        
 
                     </select>
                   

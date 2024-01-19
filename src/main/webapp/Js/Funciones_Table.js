@@ -21,7 +21,9 @@ $(document).ready(function () {
                 last: "Último",
                 next: "Siguiente",
                 previous: "Anterior"
+                
             }
+            
         }
     });
 
