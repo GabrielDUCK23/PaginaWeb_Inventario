@@ -108,21 +108,15 @@
 
                     <thead>
                         <tr>
-                            <th>Laboratorio</th>
-                            <th>Departamento donde se encuentra</th>
-                            <th>Asignatura</th>
-                            <th>Responsable</th>
-                            <th>Tipo</th>
-                            <th>Descripcion</th>
-                            <th>Tiempo que tendra el material</th> 
+                            <th>Estatus</th>
                             <th>Fecha</th>
                             <th>Hora</th> 
+                            <th>Laboratorio</th>
+                            <th>Departamento donde se encuentra</th>
                             <th>Fecha de entrega </th>
                             <th>Hora de entrega  </th> 
-                            <th>Comentarios </th>
-                            <th>Estatus</th>
-                            <th>Entregar</th>
-                            <th>Cancelar Solicitud</th> 
+                            <th>Más detalles</th>
+                       
                         </tr>
                     </thead>
 
@@ -143,59 +137,21 @@
 
 
                         <tr>
-                            <td data-column="Laboratorio"><br> <%= s.getLab()%> </td>
-
-                            <td data-column="Lugar "><br> <%= s.getDepart()%> <%= s.getDepart2()%></td>
-                            <td data-column="Asignatura"><br><%= s.getAsig()%> </td>
-                            <td data-column="Responsable"><br><%= s.getRespon()%></td>
-
-                            <td data-column="Tipo"><br><%= s.getTipo()%></td>
-                           <td data-column="Descripcion"><br> <%=replaceDotsWithNewlines(s.getDescr())%></td>
-                                <%!
-                                    public String replaceDotsWithNewlines(String input) {
-                                        return input.replace(".", "<br>");
-                                
-                                    }
-                                %>
-                            <td data-column="Tiempo"><br><%= s.getTiempo()%></td>
-
+                            <td data-column="Estatus"><br><%= s.getEstatus()%></td>
                             <td data-column="Fecha"><br><%= s.getFecha()%></td>
                             <td data-column="Hora"><br><%= s.getHora()%></td>
+                            <td data-column="Laboratorio"><br> <%= s.getLab()%> </td>
+                            <td data-column="Lugar "><br> <%= s.getDepart()%> <%= s.getDepart2()%></td>      
                             <td data-column="Fecha de entrega"><br><%= s.getFecha_E()%></td>
-
                             <td data-column="Hora de entrega "><br><%= s.getHora_E()%></td>
-                            <td data-column="Comentarios "><br><%= s.getCom()%></td>
-                            <td data-column="Estatus"><br><%= s.getEstatus()%></td>
-                            <td data-column="Entregar"> <br> 
-                                <form name="Solicitudes" method="POST" action="Solicitudes" >
-                                    <input class="button" type="hidden" name="id" value="<%= s.getId_S()%>">
-                                    <%
-                                        String sss = s.getEstatus();
-                                        String a = "Material Disponible";
-                                    %>
-                                    <button <% if (sss.equals(a)) {
-                                            out.print("enable");
-                                        } else {
-                                            out.print("disabled");
-                                        }%> type="submit" name="Entregar"  value="Entregar"  class="buttonEntregar">Entregar</button>
-                                </form>
+                            <td data-column="Ver más"><br>
+                            <form method="POST" action="Vista_Solicitudes_Alumnos.jsp" >
+                                  <input type="hidden" name="IDS" value="<%= s.getId_S() %>">
+                                 <button type="submit" class="button1">Ver Más </button>
+                            </form>
 
-                            </td>
-                            <td data-column="Cancelar">  <br>
-                                <form name="Solicitudes" method="POST" action="Solicitudes" >
-                                    <input class="button" type="hidden" name="id" value="<%= s.getId_S()%>">
-                                    <%
-                                        a = "Pendiente";
-                                        String e = "Material no Disponible";
-                                    %>
-                                    <button <% if (sss.equals(a) || sss.equals(e)) { // Se corrigió el operador lógico de 'sss.equals(a)  sss.equals(e)' a 'sss.equals(a) || sss.equals(e)'
-                                            out.print("enabled"); // Se corrigió el valor de 'enable' a 'enabled'
-                                        } else {
-                                            out.print("disabled");
-                                        } %> type="submit" name="Cancelar" value="Cancelar" class="buttonCancelar">Cancelar</button>
-
-                                </form>
-                            </td>
+                        </td>
+                           
                         </tr>
 
 

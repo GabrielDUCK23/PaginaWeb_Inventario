@@ -15,7 +15,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Menu</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-        <link rel="stylesheet" href="CSS/Menu.css">
+        <link rel="stylesheet" href="CSS/Style.css">
     </head>
     <body>
         <%    DAO_Solicitud dao = new DAO_Solicitud();
@@ -148,7 +148,7 @@
                  <td data-column="Seleccionar">
                      <form  method="POST" action="Entregar_Material.jsp"> 
                         <input type="hidden" name="id" id="correoInput"  value="<%= s.getId_S()%>">
-                        <button class="button1" type="submit" type="button" name="Consultar" value="Actualizar">Seleccionar</button>
+                        <button class="buttonEntregar" type="submit" type="button" name="Consultar" value="Actualizar">Seleccionar</button>
                     </form>
                
                 <tr>
@@ -271,7 +271,7 @@
                   <td>
                     <form  method="POST" action="RevisionMaterial.jsp"> 
                         <input type="hidden" name="id" id="correoInput"  value="<%= s.getId_S()%>">
-                        <button class="button1" type="submit" type="button" name="Consultar" value="Actualizar">Seleccionar</button>
+                        <button class="buttonEntregar" type="submit" type="button" name="Consultar" value="Actualizar">Seleccionar</button>
                     </form>
                   </td>
                  </tr>
@@ -379,7 +379,7 @@
                  <td data-column="Id">
                      <form  method="POST" action="Solicitudes_Usuarios.jsp"> 
                         <input type="hidden" name="id" id="correoInput"  value="<%= s.getId_S()%>">
-                        <button class="button1" type="submit" type="button" name="Consultar" value="Actualizar"><%= s.getId_S()%></button>
+                        <button class="buttonEntregar" type="submit" type="button" name="Consultar" value="Actualizar"><%= s.getId_S()%></button>
                     </form>
                 
                 <tr>
@@ -469,7 +469,8 @@
     </center>
     
     
-    
+            <br><br><br><br><br><br><br><br>
+           
 
     
     

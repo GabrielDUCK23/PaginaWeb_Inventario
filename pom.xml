@@ -3,8 +3,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.UDG</groupId>
-    <artifactId>HolaMundoweb</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>Cutonala</artifactId>
+    <version>Laboratorios</version>
     <packaging>war</packaging>
 
     <name>InventarioCUT</name>

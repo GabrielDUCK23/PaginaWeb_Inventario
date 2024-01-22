@@ -15,9 +15,9 @@ public class Database {
      */
     public Database(){
             this.driver = "com.mysql.jdbc.Driver";
-            this.url = "jdbc:mysql://localhost:3307/inventario_cut";
+            this.url = "jdbc:mysql://localhost:3306/inventario_cut";
             this.usuario = "root";
-            this.contraseña ="082332";
+            this.contraseña ="1234";
         }
 
     /**

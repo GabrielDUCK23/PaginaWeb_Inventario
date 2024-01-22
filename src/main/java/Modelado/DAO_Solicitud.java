@@ -200,7 +200,7 @@ public class DAO_Solicitud implements Operaciones {
            
            datos.add(new Solicitud(rs.getString("Nombre_Lab"), rs.getInt("Id_S"), rs.getInt("Id_Lab"), rs.getString("Correo_U"), rs.getString("Departamento"), rs.getString("Lugar"), rs.getString("Asignatura"),
                         rs.getString("Responsable"), rs.getString("Tipo"), rs.getString("Descripcion"), rs.getString("Tiempo"), fechaFormateada , rs.getString("Hora"),
-                        rs.getString("Estatus"), fechaEntrega , rs.getString("Hora_Entrega"), rs.getString("Comentarios"),rs.getString("Nombre"),rs.getString("Carrera"),rs.getString("Perfil"),rs.getInt("Semestre"),rs.getInt("Codigo")));
+                        rs.getString("Estatus"),rs.getString("Hora_Entrega") ,fechaEntrega , rs.getString("Comentarios"),rs.getString("Nombre"),rs.getString("Carrera"),rs.getString("Perfil"),rs.getInt("Semestre"),rs.getInt("Codigo")));
         }
 
 
@@ -321,6 +321,48 @@ public class DAO_Solicitud implements Operaciones {
         PreparedStatement pst;
         ResultSet rs;
         String sql = "select laboratorios.Nombre_Lab, solicitud.* from solicitud inner join laboratorios on solicitud.Id_Lab = laboratorios.Id_Lab WHERE Correo_U LIKE '%" + Criterio + "%' ORDER BY Fecha DESC, Hora DESC";
+
+        try {
+            Class.forName(db.getDriver());
+            con = DriverManager.getConnection(db.getUrl(), db.getUsuario(), db.getContraseña());
+            pst = con.prepareStatement(sql);
+            rs = pst.executeQuery();
+          while (rs.next()) {
+            String fecha = rs.getString("Fecha");
+            SimpleDateFormat formatoEntrada = new SimpleDateFormat("yyyy-MM-dd");
+            Date fechaDate = formatoEntrada.parse(fecha);
+            SimpleDateFormat formatoSalida = new SimpleDateFormat("dd-MM-yyyy");
+            String fechaFormateada = formatoSalida.format(fechaDate);
+            
+            String fechaEntrega = rs.getString("Fecha_Entrega");
+            if (fechaEntrega != null) {
+                Date fechaEntregaDate = formatoEntrada.parse(fechaEntrega);
+                fechaEntrega = formatoSalida.format(fechaEntregaDate);
+            }
+           
+            datos.add(new Solicitud(rs.getString("Nombre_Lab"), rs.getInt("Id_S"), rs.getInt("Id_Lab"), rs.getString("Correo_U"), rs.getString("Departamento"), rs.getString("Lugar"), rs.getString("Asignatura"),
+                    rs.getString("Responsable"), rs.getString("Tipo"), rs.getString("Descripcion"), rs.getString("Tiempo"), fechaFormateada, rs.getString("Hora"),
+                    rs.getString("Estatus"), fechaEntrega, rs.getString("Hora_Entrega"), rs.getString("Comentarios")));
+        }
+
+
+            con.close();
+        } catch (ClassNotFoundException | SQLException e) {
+
+        } catch (ParseException ex) {
+            Logger.getLogger(DAO_Solicitud.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return datos;
+    }
+    
+    
+        // Consultar todas las solicitudes de un usuario en general 
+    public List<Solicitud> consultarVista(int Criterio) {
+        List<Solicitud> datos = new ArrayList();
+        Connection con;
+        PreparedStatement pst;
+        ResultSet rs;
+        String sql = "select laboratorios.Nombre_Lab, solicitud.* from solicitud inner join laboratorios on solicitud.Id_Lab = laboratorios.Id_Lab WHERE Id_S LIKE '%" + Criterio + "%';";
 
         try {
             Class.forName(db.getDriver());

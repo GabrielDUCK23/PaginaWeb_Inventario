@@ -8,14 +8,14 @@
     font-family: 'Poppins', sans-serif;
 }
 .wrapper{
- background: #003366;
+    background: #003366;
     position: fixed;
     width: 100%;
     z-index: 9999;
 }
 .logo{
     width: 80px;
-    height: 40px;  
+    height: 40px;
 
 }
 
@@ -219,13 +219,13 @@ nav .content .links{
         overflow: hidden;
     }
     .content .links #show-features:checked ~ ul,
-        .content .links #show-features1:checked ~ ul,
-        .content .links #show-features2:checked ~ ul,
-        .content .links #show-features3:checked ~ ul,
-        .content .links #show-features4:checked ~ ul,
-        .content .links #show-features5:checked ~ ul,
-        .content .links #show-features6:checked ~ ul,
-        .content .links #show-features7:checked ~ ul,
+    .content .links #show-features1:checked ~ ul,
+    .content .links #show-features2:checked ~ ul,
+    .content .links #show-features3:checked ~ ul,
+    .content .links #show-features4:checked ~ ul,
+    .content .links #show-features5:checked ~ ul,
+    .content .links #show-features6:checked ~ ul,
+    .content .links #show-features7:checked ~ ul,
     .content .links #show-services:checked ~ ul,
     .content .links #show-items:checked ~ ul{
         max-height: 100vh;
@@ -290,7 +290,7 @@ th, td {
 thead{
     background-color: #003366;
     border-bottom: solid 1px #003366;
-    color: #ddd;   
+    color: #ddd;
 }
 thead color{
     color: #9933cc;
@@ -310,42 +310,43 @@ tbody:nth-child(even){
     background-color: #ddd;
 }
 
- body {
-        margin: 0;
-        padding: 0;
-        line-height: 1.3;
-        font-family: 'Noto Sans JP', sans-serif;
-        background: url(../imagenes/img_4254.jpg) no-repeat center center fixed;
-        background-size: cover;
+body {
+    margin: 0;
+    padding: 0;
+    line-height: 1.3;
+    font-family: 'Noto Sans JP', sans-serif;
+    background: url(../imagenes/img_4254.jpg) no-repeat center center fixed;
+    background-size: cover;
 
-    }
-    .button1 {
-    background-color: #008CBA; /* Color verde claro */
-  color: #fff; /* Color del texto */
-  padding: 5px 20px; /* Espacio entre el contenido y los bordes */
-  border: none; /* Quitamos los bordes */
-  border-radius: 4px; /* Borde redondeado */
-  cursor: pointer; /* Cursor en forma de mano */
+}
+/*    .button1 {
+    background-color: #008CBA;  Color verde claro 
+  color: #fff;  Color del texto 
+  padding: 5px 20px;  Espacio entre el contenido y los bordes 
+  border: none;  Quitamos los bordes 
+  border-radius: 4px;  Borde redondeado 
+  cursor: pointer;  Cursor en forma de mano 
    border: 2px solid #000;
 }
 
 .button1:hover {
-    background-color: #1f53c5; /* Al pasar el cursor, el color se vuelve más claro */
+    background-color: #1f53c5;  Al pasar el cursor, el color se vuelve más claro 
 }
 
 .button1:disabled {
-  background-color: #BDBDBD; /* Cuando está deshabilitado, el color es gris */
-  cursor: not-allowed; /* El cursor cambia a una señal de prohibido */
-}
+  background-color: #BDBDBD;  Cuando está deshabilitado, el color es gris 
+  cursor: not-allowed;  El cursor cambia a una señal de prohibido 
+}*/
+
 
 .buttonEntregar {
-    background-color: #009900; /* Color verde claro */
-  color: #fff; /* Color del texto */
-  padding: 5px 20px; /* Espacio entre el contenido y los bordes */
-  border: none; /* Quitamos los bordes */
-  border-radius: 4px; /* Borde redondeado */
-  cursor: pointer; /* Cursor en forma de mano */
-  border: 2px solid #000;
+    background-color: #003366; /* Color verde claro */
+    color: #fff; /* Color del texto */
+    padding: 5px 15px; /* Espacio entre el contenido y los bordes */
+    border: none; /* Quitamos los bordes */
+    border-radius: 10px; /* Borde redondeado */
+    cursor: pointer; /* Cursor en forma de mano */
+    border: 2px solid #000;
 }
 
 .buttonEntregar:hover {
@@ -353,6 +354,78 @@ tbody:nth-child(even){
 }
 
 .buttonEntregar:disabled {
-  background-color: #BDBDBD; /* Cuando está deshabilitado, el color es gris */
-  cursor: not-allowed; /* El cursor cambia a una señal de prohibido */
+    background-color: #BDBDBD; /* Cuando está deshabilitado, el color es gris */
+    cursor: not-allowed; /* El cursor cambia a una señal de prohibido */
+    color: #000;
 }
+
+
+/*#003366¨*/
+.button1 {
+
+    background-color: #ff9900;
+    color: #000; /* Color del texto */
+    padding: 5px 15px; /* Espacio entre el contenido y los bordes */
+    border: none; /* Quitamos los bordes */
+    border-radius: 10px; /* Borde redondeado */
+    cursor: pointer; /* Cursor en forma de mano */
+    border: 2px solid #000;
+}
+
+.button1:hover {
+    background-color: #cc0000; /* Al pasar el cursor, el color se vuelve más claro */
+}
+
+.button1:disabled {
+    background-color: #BDBDBD; /* Cuando está deshabilitado, el color es gris */
+    cursor: not-allowed; /* El cursor cambia a una señal de prohibido */
+}
+
+
+.buttonC{
+
+    background-color: #ff9900;
+    color: #000; /* Color del texto */
+    padding: 5px 15px; /* Espacio entre el contenido y los bordes */
+    border: none; /* Quitamos los bordes */
+    border-radius: 10px; /* Borde redondeado */
+    cursor: pointer; /* Cursor en forma de mano */
+    border: 2px solid #000;
+}
+
+.buttonC:hover {
+    background-color: #cc0000; /* Al pasar el cursor, el color se vuelve más claro */
+}
+
+.buttonC:disabled {
+    background-color: #BDBDBD; /* Cuando está deshabilitado, el color es gris */
+    cursor: not-allowed; /* El cursor cambia a una señal de prohibido */
+}
+
+
+
+/*.botons {
+    background-color: #003366; 
+    color: #fff;  Color del texto 
+    padding: 10px 20px;  Espacio entre el contenido y los bordes 
+    border: none;  Quitamos los bordes 
+    border-radius: 4px;  Borde redondeado 
+    cursor: pointer;  Cursor en forma de mano 
+    width: 100%;
+    background: #1f53c5;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+
+}
+
+.botons:hover {
+    background-color: #003366;  Al pasar el cursor, el color se vuelve más claro 
+}
+
+.botons:disabled {
+    background-color: #BDBDBD;  Cuando está deshabilitado, el color es gris 
+    cursor: not-allowed;  El cursor cambia a una señal de prohibido 
+}*/
